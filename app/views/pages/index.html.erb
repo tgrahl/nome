@@ -1,0 +1,84 @@
+<div id="course">
+<h3>Biographical Data</h3>
+<%= form_for @biographicaldata,:url=>save_biographical_data_path,:remote=>true do |f| %>
+<div class="clearfix">
+   <%= f.label :first_name%>
+  <div class="input">
+    <%= f.text_field :first_name%>
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :surname%>
+  <div class="input">
+    <%= f.text_field :surname %>
+  </div>
+</div>
+<div class="clearfix">
+   <%= f.label :initials%>
+  <div class="input">
+    <%= f.text_field :initials%>
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :gender%>
+  <div class="input">
+      <%= f.radio_button :gender, 1, :checked => true %> Male	
+    <%= f.radio_button :gender, 0 %> Female
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :id_number%>
+  <div class="input">
+    <%= f.text_field :id_number%>
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :mobile_no%>
+  <div class="input">
+    <%= f.text_field :mobile_no %>
+  </div>
+</div>
+
+
+
+<div class="clearfix">
+   <%= f.label :secondary_no%>
+  <div class="input">
+    <%= f.text_field :secondary_no%>
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :done_before%>
+  <div class="input">
+    <%= f.radio_button :done_before, 1, :checked => true %> Yes
+    <%= f.radio_button :done_before, 0 %> No
+  </div>
+</div>
+<div class="clearfix">
+   <%= f.label :last_assesment_date%>
+  <div class="input">
+    <%= f.text_field :last_assesment_date%>
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :assesment_institution%>
+  <div class="input">
+    <%= f.text_field :assesment_institution %>
+  </div>
+</div>
+
+
+
+
+<div class="form-actions">
+  <button class="btn primary" type="submit">Save</button> 
+</div>
+<% end %>
+
+</div>

@@ -1,0 +1,86 @@
+<table class="table">
+<tr>
+<th>Refrences Activity Descritpion </th>
+<th></th>
+<th></th>
+</tr>
+<% @education_refrences.each do |refrences| %>
+<tr>
+<td><%=refrences.activity_description_place %></td>
+<td><%=link_to "Edit" %></td>
+<td><%=link_to "Delete" %></td>
+</tr>
+<% end %>
+</table>
+
+<%= form_for @refrence,:url=>referral_data_save_path,:method=>:get,:remote=>true do |f| %>
+<div class="clearfix">
+   <%= f.label :activity_description_place %>
+  <div class="input">
+    <%= f.text_area :activity_description_place,:rows=>5,:cols=>40%>
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :expirience_from_activity%>
+  <div class="input">
+    <%= f.text_area :expirience_from_activity,:rows=>5,:cols=>40 %>
+  </div>
+</div>
+<div class="clearfix"  >
+ <%= f.label :skill_1%>
+<%= f.select 'skill_1', options_for_select([["Programming" , "Programming" ],["Communication" , "Communication" ],["Art" , "Art" ]])%>
+</div>
+
+<div class="clearfix"  style="margin-left: 290px; margin-top: -67px;">
+   <%= f.label :skill_1_description%>
+  <div class="input">
+    <%= f.text_field :skill_1_description%>
+  </div>
+</div>
+
+<div class="clearfix"  >
+ <%= f.label :skill_2%>
+<%= f.select 'skill_2', options_for_select([["Programming" , "Programming" ],["Communication" , "Communication" ],["Art" , "Art" ]])%>
+</div>
+
+<div class="clearfix" style="margin-left: 290px; margin-top: -67px;">
+   <%= f.label :skill_2_description%>
+  <div class="input">
+    <%= f.text_field :skill_2_description%>
+  </div>
+</div>
+<div class="clearfix"  >
+ <%= f.label :skill_3%>
+<%= f.select 'skill_3', options_for_select([["Programming" , "Programming" ],["Communication" , "Communication" ],["Art" , "Art" ]])%>
+</div>
+
+<div class="clearfix" style="margin-left: 290px; margin-top: -67px;">
+   <%= f.label :skill_3_description%>
+  <div class="input">
+    <%= f.text_field :skill_3_description%>
+  </div>
+</div>
+<%= hidden_field_tag "education_id", @education.id %>
+<div class="form-actions">
+  <button class="btn primary" type="submit">Save</button> 
+</div>
+<% end %>
+  <button class="btn primary" type="submit" id="next" style="margin-left: 373px; margin-top: -140px;">Next</button>
+
+
+
+  <script>
+	$(document).ready(function(){
+	  $("#next").click(function(){
+	      $.ajax({
+            type : 'GET',
+            url : '<%= referral_data_save_path%>',
+            data: {'next' : true},
+             success: function () {
+             }
+           })
+	   });
+	}); 
+ </script> 
+

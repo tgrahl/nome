@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  first_name: MyString
+  surname: MyString
+  initials: MyString
+  gender: false
+  id_number: MyString
+  mobile_no: MyString
+  secondary_no: MyString
+  done_before: false
+  last_assesment_date: 2013-12-15
+  assesment_institution: MyString
+
+two:
+  first_name: MyString
+  surname: MyString
+  initials: MyString
+  gender: false
+  id_number: MyString
+  mobile_no: MyString
+  secondary_no: MyString
+  done_before: false
+  last_assesment_date: 2013-12-15
+  assesment_institution: MyString

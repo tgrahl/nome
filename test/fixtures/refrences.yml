@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  activity_description_place: MyText
+  expirience_from_activity: MyText
+  skill_1: MyString
+  skill_1_description: MyString
+  skill_2: MyString
+  skill_2_description: MyString
+  skill_3: MyString
+  skill_3_description: MyString
+  referral: MyString
+  referral_contact_no: MyString
+  referral_email: MyString
+  education_id: 
+
+two:
+  activity_description_place: MyText
+  expirience_from_activity: MyText
+  skill_1: MyString
+  skill_1_description: MyString
+  skill_2: MyString
+  skill_2_description: MyString
+  skill_3: MyString
+  skill_3_description: MyString
+  referral: MyString
+  referral_contact_no: MyString
+  referral_email: MyString
+  education_id: 

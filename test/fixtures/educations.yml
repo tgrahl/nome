@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  completion_year: MyString
+  completed_qualification: MyString
+  final_result: MyString
+  endorsment: MyString
+  subject_1: MyString
+  mark_1: MyString
+  subject_2: MyString
+  mark_2: MyString
+  subject_3: MyString
+  mark_3: MyString
+  subject_4: MyString
+  mark_4: MyString
+  subject_5: MyString
+  mark_5: MyString
+  subject_6: MyString
+  mark_6: MyString
+  subject_7: MyString
+  mark_7: MyString
+  subject_8: MyString
+  mark_8: MyString
+  subject_9: MyString
+  mark_9: MyString
+  course_id: 1
+
+two:
+  completion_year: MyString
+  completed_qualification: MyString
+  final_result: MyString
+  endorsment: MyString
+  subject_1: MyString
+  mark_1: MyString
+  subject_2: MyString
+  mark_2: MyString
+  subject_3: MyString
+  mark_3: MyString
+  subject_4: MyString
+  mark_4: MyString
+  subject_5: MyString
+  mark_5: MyString
+  subject_6: MyString
+  mark_6: MyString
+  subject_7: MyString
+  mark_7: MyString
+  subject_8: MyString
+  mark_8: MyString
+  subject_9: MyString
+  mark_9: MyString
+  course_id: 1

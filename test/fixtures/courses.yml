@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  educational_institution: MyString
+  course_reapplied: MyString
+  region: MyString
+  field_of_study: MyString
+  biographical_data_id: 1
+
+two:
+  educational_institution: MyString
+  course_reapplied: MyString
+  region: MyString
+  field_of_study: MyString
+  biographical_data_id: 1

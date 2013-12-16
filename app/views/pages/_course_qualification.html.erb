@@ -1,0 +1,32 @@
+<%= form_for @course,:url=>course_qualification_save_path,:remote=>true do |f| %>
+<div class="clearfix">
+   <%= f.label :educational_institution%>
+  <div class="input">
+    <%= f.text_field :educational_institution%>
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :course_reapplied%>
+  <div class="input">
+    <%= f.text_field :course_reapplied %>
+  </div>
+</div>
+<div class="clearfix">
+   <%= f.label :region%>
+  <div class="input">
+    <%= f.text_field :region%>
+  </div>
+</div>
+
+<div class="clearfix">
+   <%= f.label :field_of_study%>
+  <div class="input">
+    <%= f.text_field :field_of_study%>
+  </div>
+</div>
+<%= hidden_field_tag "biographical_data_id", @biographicaldata.id %>
+<div class="form-actions">
+  <button class="btn primary" type="submit">Save</button> 
+</div>
+<% end %>

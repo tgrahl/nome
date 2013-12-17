@@ -50,14 +50,7 @@
     <div class="container-fluid">
        <div class="row-fluid">
         <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Home</li>
-              <li class="nav-header">Application </li>
-               <li class="nav-header">Biographical data </li>
-              <li><%# link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
+        <%#= render 'layouts/breadcumb'%>
         </div><!--/span-->
         <div class="span9">
           <% [:notice, :error, :alert].each do |level| %>

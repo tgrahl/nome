@@ -8,9 +8,16 @@ WickedExample::Application.routes.draw do
 
   resources   :users
   post '/save_biographical_data' => 'pages#save_biographical_data', as: 'save_biographical_data'
+  
+  post '/save_education_data' => 'pages#save_education_data', as: 'save_education_data'
+  
   post '/course_qualification_save' => 'pages#course_qualification_save', as: 'course_qualification_save'
   post '/education_save_data' => 'pages#education_save_data', as: 'education_save_data'
+  
   get '/referral_data_save' => 'pages#referral_data_save', as: 'referral_data_save'
+  get '/destroy_ref_data' => 'pages#destroy_ref_data', as: 'destroy_ref_data'
+  get '/edit_referral_data' => 'pages#edit_referral_data', as: 'edit_referral_data'
+  
   get '/supporting_document_save' => 'pages#supporting_document_save', as: 'supporting_document_save'
 
 

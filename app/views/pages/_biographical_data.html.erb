@@ -1,11 +1,10 @@
-<% if user_signed_in? %>
 <div id="course">
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
   <li><a href="#">Application</a></li>
   <li class="active">Biographical Data</li>
 </ol>
-<%= form_for @biographicaldata,:url=>save_biographical_data_path,:remote=>true do |f| %>
+<%= form_for @biographicaldata,:url=>save_biographical_data_path,:remote=>true ,:method=>"POST"  do |f| %>
 <div class="clearfix">
    <%= f.label :first_name%>
   <div class="input">
@@ -87,8 +86,3 @@
 <% end %>
 
 </div>
-
-<% else %>
-<h2>welcome</h2>
-
-<% end %>

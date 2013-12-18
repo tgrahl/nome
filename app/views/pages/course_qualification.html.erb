@@ -6,7 +6,7 @@
    <li class="active">Course</li>
 </ol>
 
-<%= form_for @course,:url=>course_qualification_save_path,:remote=>true ,:method=>"POST" do |f| %>
+<%= form_for @course,:url=>course_qualification_save_path,:method=>"POST" do |f| %>
 <div class="clearfix">
    <%= f.label :educational_institution%>
   <div class="input">
@@ -42,19 +42,4 @@
   <button class="btn primary" type="submit">Save</button> 
 </div>
 <% end %>
- <button class="btn primary back_1" type="submit" style="margin-left: 373px; margin-top: -140px;">back</button> 
-
-
- <script>
-  $(document).ready(function(){
-    $(".back_1").click(function(){
-        $.ajax({
-            type : 'GET',
-            url : '<%= root_path%>',
-            data: {'id' : "<%=@biographicaldata.id %>"},
-             success: function () {
-             }
-           })
-     });
-  }); 
- </script> 
+<%= link_to "Back", root_path(id: @biographicaldata.id), :class=>"btn primary", :style=>"margin-left: 373px; margin-top: -140px;"%>

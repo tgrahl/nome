@@ -9,16 +9,22 @@ WickedExample::Application.routes.draw do
   resources   :users
   post '/save_biographical_data' => 'pages#save_biographical_data', as: 'save_biographical_data'
   
-  post '/save_education_data' => 'pages#save_education_data', as: 'save_education_data'
-  
   post '/course_qualification_save' => 'pages#course_qualification_save', as: 'course_qualification_save'
-  post '/education_save_data' => 'pages#education_save_data', as: 'education_save_data'
+  get '/course_qualification' => 'pages#course_qualification', as: 'course_qualification'
   
-  get '/referral_data_save' => 'pages#referral_data_save', as: 'referral_data_save'
+  post '/education_save_data' => 'pages#education_save_data', as: 'education_save_data'
+  get '/education' => 'pages#education', as: 'education'
+  
+  post '/referral_data_save' => 'pages#referral_data_save', as: 'referral_data_save'
+  get '/reference' => 'pages#reference', as: 'reference'
+  
   get '/destroy_ref_data' => 'pages#destroy_ref_data', as: 'destroy_ref_data'
   get '/edit_referral_data' => 'pages#edit_referral_data', as: 'edit_referral_data'
   
+  get '/destroy_ref_document' => 'pages#destroy_ref_document', as: 'destroy_ref_document'
+  
   get '/supporting_document_save' => 'pages#supporting_document_save', as: 'supporting_document_save'
+  get '/supporting_documents' => 'pages#supporting_documents', as: 'supporting_documents'
 
 
   # The priority is based upon order of creation:

@@ -6,6 +6,8 @@
   <li ><a href="#">Education</a></li>
   <li class="active">Refrences</a></li>
 </ol>
+
+
 <table class="table">
 <tr>
 <th>Refrences Activity Descritpion </th>
@@ -15,13 +17,13 @@
 <% @education_refrences.each do |refrences| %>
 <tr>
 <td><%=refrences.activity_description_place %></td>
-<td><%=link_to "Edit", edit_referral_data_path(:ref_id=>refrences.id, :education_id => @education.id ), :remote=>true %></td>
-<td><%=link_to "Delete", destroy_ref_data_path(:ref_id=>refrences.id, :education_id => @education.id ), :confirm => 'Are you sure?', :remote=>true  %></td>
+<td><%=link_to "Edit", reference_path(:ref_id=>refrences.id, :education_id => @education.id ) %></td>
+<td><%=link_to "Delete", destroy_ref_data_path(:ref_id=>refrences.id, :education_id => @education.id ), :confirm => 'Are you sure?'  %></td>
 </tr>
 <% end %>
 </table>
 
-<%= form_for @refrence,:url=>referral_data_save_path,:method=>:get,:remote=>true do |f| %>
+<%= form_for @refrence,:url=>referral_data_save_path,:method=>:post, :html => { :multipart => true } do |f| %>
 <div class="clearfix">
    <%= f.label :activity_description_place %>
   <div class="input">
@@ -71,41 +73,34 @@
 </div>
 <%= hidden_field_tag "education_id", @education.id %>
 <%= hidden_field_tag "ref_id", @refrence.id %>
+
+<%= file_field_tag "ref_document[]" , :multiple=>true%>
+<div id="document_div">
+  <% if !@attached_files.nil? %>
+    <table class="table">
+      <tr>
+        <th>Upload Name </th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @attached_files.each do |attached_files| %>
+        <tr>
+          <td><%= attached_files.ref_document_file_name %></td>
+          <td></td>
+          <td><%=link_to "Delete", destroy_ref_document_path(:file_id => attached_files.id, :education_id => @education.id), :confirm => 'Are you sure?'  %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>
+
 <div class="form-actions">
-
-  
-
   <button class="btn primary" type="submit">Save</button> 
 </div>
 <% end %>
+<%= link_to "Back", education_path(education_id: @education.id), :class=>"btn primary", :style=>"margin-left: 373px; margin-top: -140px;"%>
 
-  <button class="btn primary back_3" type="submit" style="margin-left: 373px; margin-top: -140px;">back</button> 
-
-  <button class="btn primary" type="submit" id="next" style="margin-left: 373px; margin-top: -140px;">Next</button>
-
+<%= link_to "Next", supporting_documents_path, :class=>"btn primary", :style=>"margin-left: 373px; margin-top: -140px;"%>
 
 
-  <script>
-	$(document).ready(function(){
-	  $("#next").click(function(){
-	      $.ajax({
-            type : 'GET',
-            url : '<%= referral_data_save_path%>',
-            data: {'next' : true},
-             success: function () {
-             }
-           })
-	   });
-
-    $(".back_3").click(function(){
-    $.ajax({
-      type : 'POST',
-      url : '<%= save_education_data_path%>',
-      data: {'education_back_id' : "<%=@education.id%>"},
-        success: function () {
-        }
-      })
-    });
-	}); 
- </script> 
 

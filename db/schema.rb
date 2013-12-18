@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131216120535) do
+ActiveRecord::Schema.define(:version => 20131218115852) do
 
   create_table "biographical_data", :force => true do |t|
     t.string   "first_name"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(:version => 20131216120535) do
     t.integer  "biographical_data_id"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
+  end
+
+  create_table "document_references", :force => true do |t|
+    t.integer  "refrence_id"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.string   "ref_document_file_name"
+    t.string   "ref_document_content_type"
+    t.integer  "ref_document_file_size"
+    t.datetime "ref_document_updated_at"
   end
 
   create_table "educations", :force => true do |t|
@@ -65,6 +75,10 @@ ActiveRecord::Schema.define(:version => 20131216120535) do
     t.integer  "course_id"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   create_table "refrences", :force => true do |t|

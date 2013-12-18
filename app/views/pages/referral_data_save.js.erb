@@ -1,5 +1,0 @@
-<%if !params[:next].present? %>
-$("#course").html("<%= escape_javascript(render(:partial => 'refrence')) %>");
-<% else %>
-$("#course").html("<%= escape_javascript(render(:partial => 'supporting_documents')) %>");
-<% end %>
